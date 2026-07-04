@@ -1,0 +1,654 @@
+{
+  "launcher_d": [
+    {
+      "cell": 0,
+      "w": 64,
+      "h": 80,
+      "file": "cell_00.png"
+    },
+    {
+      "cell": 1,
+      "w": 64,
+      "h": 80,
+      "file": "cell_01.png"
+    },
+    {
+      "cell": 2,
+      "w": 66,
+      "h": 82,
+      "file": "cell_02.png"
+    },
+    {
+      "cell": 3,
+      "w": 16,
+      "h": 16,
+      "file": "cell_03.png"
+    },
+    {
+      "cell": 4,
+      "w": 64,
+      "h": 67,
+      "file": "cell_04.png"
+    },
+    {
+      "cell": 5,
+      "w": 64,
+      "h": 65,
+      "file": "cell_05.png"
+    },
+    {
+      "cell": 6,
+      "w": 64,
+      "h": 64,
+      "file": "cell_06.png"
+    },
+    {
+      "cell": 7,
+      "w": 64,
+      "h": 67,
+      "file": "cell_07.png"
+    },
+    {
+      "cell": 8,
+      "w": 64,
+      "h": 65,
+      "file": "cell_08.png"
+    },
+    {
+      "cell": 9,
+      "w": 64,
+      "h": 64,
+      "file": "cell_09.png"
+    },
+    {
+      "cell": 10,
+      "w": 64,
+      "h": 64,
+      "file": "cell_10.png"
+    },
+    {
+      "cell": 11,
+      "w": 64,
+      "h": 64,
+      "file": "cell_11.png"
+    },
+    {
+      "cell": 12,
+      "w": 64,
+      "h": 66,
+      "file": "cell_12.png"
+    },
+    {
+      "cell": 13,
+      "w": 64,
+      "h": 64,
+      "file": "cell_13.png"
+    },
+    {
+      "cell": 14,
+      "w": 64,
+      "h": 64,
+      "file": "cell_14.png"
+    },
+    {
+      "cell": 15,
+      "w": 64,
+      "h": 64,
+      "file": "cell_15.png"
+    },
+    {
+      "cell": 16,
+      "w": 64,
+      "h": 64,
+      "file": "cell_16.png"
+    },
+    {
+      "cell": 17,
+      "w": 64,
+      "h": 64,
+      "file": "cell_17.png"
+    },
+    {
+      "cell": 18,
+      "w": 32,
+      "h": 32,
+      "file": "cell_18.png"
+    },
+    {
+      "cell": 19,
+      "w": 32,
+      "h": 32,
+      "file": "cell_19.png"
+    },
+    {
+      "cell": 20,
+      "w": 32,
+      "h": 32,
+      "file": "cell_20.png"
+    },
+    {
+      "cell": 21,
+      "w": 32,
+      "h": 32,
+      "file": "cell_21.png"
+    },
+    {
+      "cell": 22,
+      "w": 32,
+      "h": 32,
+      "file": "cell_22.png"
+    },
+    {
+      "cell": 23,
+      "w": 32,
+      "h": 34,
+      "file": "cell_23.png"
+    },
+    {
+      "cell": 24,
+      "w": 31,
+      "h": 32,
+      "file": "cell_24.png"
+    },
+    {
+      "cell": 25,
+      "w": 31,
+      "h": 32,
+      "file": "cell_25.png"
+    },
+    {
+      "cell": 26,
+      "w": 8,
+      "h": 8,
+      "file": "cell_26.png"
+    },
+    {
+      "cell": 27,
+      "w": 60,
+      "h": 76,
+      "file": "cell_27.png"
+    },
+    {
+      "cell": 28,
+      "w": 8,
+      "h": 8,
+      "file": "cell_28.png"
+    },
+    {
+      "cell": 29,
+      "w": 62,
+      "h": 78,
+      "file": "cell_29.png"
+    },
+    {
+      "cell": 30,
+      "w": 8,
+      "h": 8,
+      "file": "cell_30.png"
+    },
+    {
+      "cell": 31,
+      "w": 8,
+      "h": 8,
+      "file": "cell_31.png"
+    },
+    {
+      "cell": 32,
+      "w": 16,
+      "h": 16,
+      "file": "cell_32.png"
+    },
+    {
+      "cell": 33,
+      "w": 16,
+      "h": 16,
+      "file": "cell_33.png"
+    },
+    {
+      "cell": 34,
+      "w": 16,
+      "h": 78,
+      "file": "cell_34.png"
+    },
+    {
+      "cell": 35,
+      "w": 16,
+      "h": 78,
+      "file": "cell_35.png"
+    },
+    {
+      "cell": 36,
+      "w": 64,
+      "h": 67,
+      "file": "cell_36.png"
+    },
+    {
+      "cell": 37,
+      "w": 64,
+      "h": 65,
+      "file": "cell_37.png"
+    },
+    {
+      "cell": 38,
+      "w": 64,
+      "h": 64,
+      "file": "cell_38.png"
+    },
+    {
+      "cell": 39,
+      "w": 8,
+      "h": 8,
+      "file": "cell_39.png"
+    },
+    {
+      "cell": 40,
+      "w": 16,
+      "h": 16,
+      "file": "cell_40.png"
+    },
+    {
+      "cell": 41,
+      "w": 8,
+      "h": 8,
+      "file": "cell_41.png"
+    },
+    {
+      "cell": 42,
+      "w": 8,
+      "h": 8,
+      "file": "cell_42.png"
+    },
+    {
+      "cell": 43,
+      "w": 16,
+      "h": 16,
+      "file": "cell_43.png"
+    },
+    {
+      "cell": 44,
+      "w": 64,
+      "h": 64,
+      "file": "cell_44.png"
+    },
+    {
+      "cell": 45,
+      "w": 32,
+      "h": 32,
+      "file": "cell_45.png"
+    },
+    {
+      "cell": 46,
+      "w": 32,
+      "h": 32,
+      "file": "cell_46.png"
+    },
+    {
+      "cell": 47,
+      "w": 32,
+      "h": 32,
+      "file": "cell_47.png"
+    },
+    {
+      "cell": 48,
+      "w": 32,
+      "h": 32,
+      "file": "cell_48.png"
+    },
+    {
+      "cell": 49,
+      "w": 32,
+      "h": 32,
+      "file": "cell_49.png"
+    },
+    {
+      "cell": 50,
+      "w": 32,
+      "h": 32,
+      "file": "cell_50.png"
+    },
+    {
+      "cell": 51,
+      "w": 32,
+      "h": 32,
+      "file": "cell_51.png"
+    },
+    {
+      "cell": 52,
+      "w": 1,
+      "h": 1,
+      "file": "cell_52.png"
+    },
+    {
+      "cell": 53,
+      "w": 128,
+      "h": 144,
+      "file": "cell_53.png"
+    },
+    {
+      "cell": 54,
+      "w": 128,
+      "h": 144,
+      "file": "cell_54.png"
+    },
+    {
+      "cell": 55,
+      "w": 128,
+      "h": 144,
+      "file": "cell_55.png"
+    },
+    {
+      "cell": 56,
+      "w": 128,
+      "h": 144,
+      "file": "cell_56.png"
+    },
+    {
+      "cell": 57,
+      "w": 128,
+      "h": 144,
+      "file": "cell_57.png"
+    },
+    {
+      "cell": 58,
+      "w": 128,
+      "h": 144,
+      "file": "cell_58.png"
+    },
+    {
+      "cell": 59,
+      "w": 128,
+      "h": 144,
+      "file": "cell_59.png"
+    },
+    {
+      "cell": 60,
+      "w": 128,
+      "h": 144,
+      "file": "cell_60.png"
+    },
+    {
+      "cell": 61,
+      "w": 128,
+      "h": 144,
+      "file": "cell_61.png"
+    },
+    {
+      "cell": 62,
+      "w": 128,
+      "h": 144,
+      "file": "cell_62.png"
+    },
+    {
+      "cell": 63,
+      "w": 128,
+      "h": 144,
+      "file": "cell_63.png"
+    },
+    {
+      "cell": 64,
+      "w": 128,
+      "h": 144,
+      "file": "cell_64.png"
+    },
+    {
+      "cell": 65,
+      "w": 128,
+      "h": 144,
+      "file": "cell_65.png"
+    },
+    {
+      "cell": 66,
+      "w": 128,
+      "h": 144,
+      "file": "cell_66.png"
+    },
+    {
+      "cell": 67,
+      "w": 128,
+      "h": 144,
+      "file": "cell_67.png"
+    },
+    {
+      "cell": 68,
+      "w": 128,
+      "h": 144,
+      "file": "cell_68.png"
+    },
+    {
+      "cell": 69,
+      "w": 128,
+      "h": 144,
+      "file": "cell_69.png"
+    },
+    {
+      "cell": 70,
+      "w": 128,
+      "h": 144,
+      "file": "cell_70.png"
+    },
+    {
+      "cell": 71,
+      "w": 128,
+      "h": 144,
+      "file": "cell_71.png"
+    },
+    {
+      "cell": 72,
+      "w": 128,
+      "h": 144,
+      "file": "cell_72.png"
+    },
+    {
+      "cell": 73,
+      "w": 128,
+      "h": 144,
+      "file": "cell_73.png"
+    },
+    {
+      "cell": 74,
+      "w": 128,
+      "h": 144,
+      "file": "cell_74.png"
+    },
+    {
+      "cell": 75,
+      "w": 128,
+      "h": 144,
+      "file": "cell_75.png"
+    },
+    {
+      "cell": 76,
+      "w": 128,
+      "h": 144,
+      "file": "cell_76.png"
+    },
+    {
+      "cell": 77,
+      "w": 128,
+      "h": 144,
+      "file": "cell_77.png"
+    },
+    {
+      "cell": 78,
+      "w": 128,
+      "h": 144,
+      "file": "cell_78.png"
+    },
+    {
+      "cell": 79,
+      "w": 128,
+      "h": 144,
+      "file": "cell_79.png"
+    },
+    {
+      "cell": 80,
+      "w": 128,
+      "h": 144,
+      "file": "cell_80.png"
+    },
+    {
+      "cell": 81,
+      "w": 128,
+      "h": 144,
+      "file": "cell_81.png"
+    },
+    {
+      "cell": 82,
+      "w": 128,
+      "h": 144,
+      "file": "cell_82.png"
+    },
+    {
+      "cell": 83,
+      "w": 128,
+      "h": 144,
+      "file": "cell_83.png"
+    },
+    {
+      "cell": 84,
+      "w": 128,
+      "h": 144,
+      "file": "cell_84.png"
+    },
+    {
+      "cell": 85,
+      "w": 128,
+      "h": 144,
+      "file": "cell_85.png"
+    },
+    {
+      "cell": 86,
+      "w": 128,
+      "h": 144,
+      "file": "cell_86.png"
+    },
+    {
+      "cell": 87,
+      "w": 128,
+      "h": 144,
+      "file": "cell_87.png"
+    },
+    {
+      "cell": 88,
+      "w": 128,
+      "h": 144,
+      "file": "cell_88.png"
+    },
+    {
+      "cell": 89,
+      "w": 64,
+      "h": 104,
+      "file": "cell_89.png"
+    },
+    {
+      "cell": 90,
+      "w": 64,
+      "h": 104,
+      "file": "cell_90.png"
+    },
+    {
+      "cell": 91,
+      "w": 64,
+      "h": 104,
+      "file": "cell_91.png"
+    },
+    {
+      "cell": 92,
+      "w": 64,
+      "h": 104,
+      "file": "cell_92.png"
+    },
+    {
+      "cell": 93,
+      "w": 64,
+      "h": 104,
+      "file": "cell_93.png"
+    },
+    {
+      "cell": 94,
+      "w": 64,
+      "h": 104,
+      "file": "cell_94.png"
+    }
+  ],
+  "launcher_u": [
+    {
+      "cell": 0,
+      "w": 32,
+      "h": 15,
+      "file": "cell_00.png"
+    },
+    {
+      "cell": 1,
+      "w": 32,
+      "h": 15,
+      "file": "cell_01.png"
+    },
+    {
+      "cell": 2,
+      "w": 32,
+      "h": 15,
+      "file": "cell_02.png"
+    },
+    {
+      "cell": 3,
+      "w": 32,
+      "h": 15,
+      "file": "cell_03.png"
+    },
+    {
+      "cell": 4,
+      "w": 168,
+      "h": 24,
+      "file": "cell_04.png"
+    },
+    {
+      "cell": 5,
+      "w": 168,
+      "h": 24,
+      "file": "cell_05.png"
+    },
+    {
+      "cell": 6,
+      "w": 18,
+      "h": 16,
+      "file": "cell_06.png"
+    },
+    {
+      "cell": 7,
+      "w": 18,
+      "h": 16,
+      "file": "cell_07.png"
+    },
+    {
+      "cell": 8,
+      "w": 18,
+      "h": 16,
+      "file": "cell_08.png"
+    },
+    {
+      "cell": 9,
+      "w": 18,
+      "h": 16,
+      "file": "cell_09.png"
+    },
+    {
+      "cell": 10,
+      "w": 18,
+      "h": 16,
+      "file": "cell_10.png"
+    },
+    {
+      "cell": 11,
+      "w": 32,
+      "h": 15,
+      "file": "cell_11.png"
+    },
+    {
+      "cell": 12,
+      "w": 32,
+      "h": 15,
+      "file": "cell_12.png"
+    }
+  ]
+}

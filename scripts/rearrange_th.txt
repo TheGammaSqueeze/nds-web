@@ -1,0 +1,12 @@
+# Settle, then touch-and-hold a SIDE (non-selected) icon steadily to try to trigger
+# the touch grab. Record to catch a lift.
+frame 640
+tap 128 96
+frame 830
+rec on thold
+touch 63 112
+wait 120
+rec off
+capture thold_done
+release
+wait 10

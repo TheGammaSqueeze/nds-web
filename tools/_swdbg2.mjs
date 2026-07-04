@@ -1,0 +1,12 @@
+import { chromium } from 'playwright';
+import { startServer } from '/work/nds/tools/serve.js';
+const s = await startServer();
+const b = await chromium.launch({ args: ['--use-gl=swiftshader', '--no-sandbox'] });
+const p = await b.newPage();
+const f404 = []; p.on('response', r => { if (r.status()===404) f404.push(r.url().split('/').slice(-2).join('/')); });
+await p.goto(s.url + '?scale=4', { waitUntil: 'networkidle' });
+await p.waitForFunction('window.DSi && window.DSi.ready');
+await p.evaluate(() => { window.DSi.skipBoot(); window.DSi.openSettings(); });
+await p.waitForTimeout(700);
+console.log('404s:', [...new Set(f404)].filter(u=>/swatch|ring|dialog/.test(u)).slice(0,8));
+await b.close(); s.close();

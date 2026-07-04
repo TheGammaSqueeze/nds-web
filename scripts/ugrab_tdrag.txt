@@ -1,0 +1,62 @@
+# Grab via UP (known to work), then TOUCH the lifted tile and drag it, to test whether
+# a grabbed icon follows the finger freely (free-move) or stays center-pinned.
+frame 700
+tap 128 96
+frame 1300
+# GRAB with UP
+key UP
+wait 4
+unkey UP
+wait 40
+capture ug_grabbed
+memdump ug_ram_center
+# --- Touch the lifted tile (center-top ~128,72) and hold, then drag RIGHT in steps ---
+rec on ug_drag
+touch 128 72
+wait 12
+capture ug_touch0
+touch 150 72
+wait 10
+capture ug_touchR1
+touch 175 72
+wait 10
+capture ug_touchR2
+touch 205 72
+wait 10
+capture ug_touchR3
+memdump ug_ram_right
+wait 10
+capture ug_touchR3b
+# drag LEFT across center
+touch 128 72
+wait 10
+capture ug_touchC
+touch 70 72
+wait 10
+capture ug_touchL
+rec off
+# release (drop?) and see result
+release
+wait 40
+capture ug_released
+memdump ug_ram_afterrel
+# --- Second test: touch lower, on the OTHER-icons row, and drag it ---
+key UP
+wait 4
+unkey UP
+wait 40
+capture ug2_grabbed
+rec on ug2_drag
+touch 128 116
+wait 10
+touch 175 116
+wait 10
+touch 210 116
+wait 10
+touch 70 116
+wait 10
+rec off
+capture ug2_end
+release
+wait 30
+capture ug2_rel

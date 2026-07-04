@@ -1,0 +1,53 @@
+# Touch-grab attempts on the settled carousel. Center icon x=128, row center y~115.
+# Determine whether any touch gesture lifts the centered tile into rearrange mode.
+frame 700
+tap 128 96
+frame 1300
+mark settled
+# --- Probe 1: long stationary hold on center icon, periodic captures ---
+touch 128 115
+wait 40
+capture tg1_40
+wait 40
+capture tg1_80
+wait 60
+capture tg1_140
+wait 60
+capture tg1_200
+release
+wait 30
+capture tg1_rel
+# --- Probe 2: touch, micro-wiggle to arm, then hold ---
+touch 128 115
+wait 15
+touch 129 114
+wait 15
+touch 127 116
+wait 15
+touch 128 115
+wait 90
+capture tg2_held
+release
+wait 30
+capture tg2_rel
+# --- Probe 3: press then slow continuous drag while held (press-drag grab) ---
+rec on tg3
+touch 128 115
+wait 30
+touch 132 114
+wait 6
+touch 138 113
+wait 6
+touch 146 112
+wait 6
+touch 156 111
+wait 6
+touch 168 110
+wait 6
+touch 182 110
+wait 8
+rec off
+capture tg3_end
+release
+wait 30
+capture tg3_rel

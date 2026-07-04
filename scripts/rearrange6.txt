@@ -1,0 +1,25 @@
+# Settle, grab with UP, then test A as drop, then DOWN as drop.
+frame 640
+tap 128 96
+frame 830
+key UP
+wait 4
+unkey UP
+wait 30
+capture rg_grabbed
+# try A
+rec on rA
+key A
+wait 4
+unkey A
+wait 30
+rec off
+capture rg_afterA
+# try DOWN (in case still grabbed)
+rec on rD
+key DOWN
+wait 4
+unkey DOWN
+wait 30
+rec off
+capture rg_afterDown

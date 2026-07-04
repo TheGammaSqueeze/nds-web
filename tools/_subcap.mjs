@@ -1,0 +1,17 @@
+import { chromium } from 'playwright';
+import { startServer } from '/work/nds/tools/serve.js';
+import fs from 'fs';
+const sub = process.argv[2] || 'date';
+const out = process.argv[3] || '/tmp/sub.png';
+const s = await startServer();
+const b = await chromium.launch({ args: ['--use-gl=swiftshader', '--no-sandbox'] });
+const p = await b.newPage({ viewport: { width: 900, height: 1400 } });
+await p.goto(s.url + (process.env.SC==='1'?'':'?scale=4'), { waitUntil: 'networkidle' });
+await p.waitForFunction('window.DSi && window.DSi.ready');
+await p.evaluate((sub) => { window.__demoTime = Date.parse('2000-01-01T09:30:00'); window.DSi.skipBoot(); const a = window.DSi.openSettings(); if (sub==='menu'){a.page=1;a.sub=null;} else {a.page=0;a.sub=sub;} window.__A=a; }, sub);
+await p.waitForTimeout(400);
+await p.evaluate(() => window.DSi.drawSettings());
+await p.waitForTimeout(60);
+const png = await p.evaluate(() => document.getElementById('bottom').toDataURL('image/png'));
+fs.writeFileSync(out, Buffer.from(png.split(',')[1], 'base64'));
+await b.close(); s.close(); console.log('ok', sub);

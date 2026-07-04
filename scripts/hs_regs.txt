@@ -1,0 +1,5 @@
+frame 150
+regs hs_regs150.txt
+frame 200
+regs hs_regs200.txt
+memdump hs_ram150.bin

@@ -1,0 +1,13 @@
+# Fully settle the carousel, THEN press UP (the user's stated grab trigger) and
+# record. Also try DOWN and A afterwards to probe.
+frame 640
+tap 128 96
+frame 830
+mark settled
+rec on up
+key UP
+wait 4
+unkey UP
+wait 40
+rec off
+capture up_done

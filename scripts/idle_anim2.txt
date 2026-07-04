@@ -1,0 +1,7 @@
+frame 700
+tap 128 96
+frame 1300
+rec on g
+wait 150
+rec off
+wait 10

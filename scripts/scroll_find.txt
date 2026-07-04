@@ -1,0 +1,24 @@
+frame 640
+tap 128 96
+frame 820
+memdump ram/slot0.bin
+key RIGHT
+wait 2
+unkey RIGHT
+wait 40
+memdump ram/slot1.bin
+key RIGHT
+wait 2
+unkey RIGHT
+wait 40
+memdump ram/slot2.bin
+key RIGHT
+wait 2
+unkey RIGHT
+wait 40
+memdump ram/slot3.bin
+key RIGHT
+wait 2
+unkey RIGHT
+wait 40
+memdump ram/slot4.bin

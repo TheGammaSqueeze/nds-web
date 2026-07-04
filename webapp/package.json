@@ -1,0 +1,14 @@
+{
+  "name": "dsi-web-bios",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "serve": "node ../tools/server.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.1"
+  },
+  "dependencies": {
+    "opentype.js": "^2.0.0"
+  }
+}

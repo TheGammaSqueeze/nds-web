@@ -1,0 +1,38 @@
+# Settle, grab with UP, then move the grabbed icon LEFT and RIGHT, then drop.
+frame 640
+tap 128 96
+frame 830
+# GRAB
+key UP
+wait 4
+unkey UP
+wait 30
+capture grab5
+# MOVE RIGHT one slot (grabbed icon's insertion point moves)
+rec on gmoveR
+key RIGHT
+wait 3
+unkey RIGHT
+wait 20
+rec off
+capture gmovedR
+# MOVE LEFT two slots
+key LEFT
+wait 3
+unkey LEFT
+wait 16
+key LEFT
+wait 3
+unkey LEFT
+wait 16
+capture gmovedL
+# DROP with UP
+rec on gdrop
+key UP
+wait 4
+unkey UP
+wait 40
+rec off
+capture gdropped
+# also probe: after drop, press A / DOWN to see behaviour
+capture final

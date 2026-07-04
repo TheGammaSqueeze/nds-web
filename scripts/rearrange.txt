@@ -1,0 +1,29 @@
+# Boot to carousel, grab the selected icon with UP, move it right, drop with UP.
+# Record each phase to RE the rearrange animation, style and assets.
+frame 640
+tap 128 96
+frame 760
+# GRAB: press UP to lift the selected icon into rearrange mode
+rec on grab
+key UP
+wait 3
+unkey UP
+wait 30
+rec off
+capture grabbed
+# MOVE: push the grabbed icon one slot right
+rec on moveR
+key RIGHT
+wait 3
+unkey RIGHT
+wait 22
+rec off
+capture moved
+# DROP: press UP (or A) to place it
+rec on drop
+key UP
+wait 3
+unkey UP
+wait 30
+rec off
+capture dropped

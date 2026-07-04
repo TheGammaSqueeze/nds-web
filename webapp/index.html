@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Nintendo DSi Menu</title>
+<!-- On the public GitHub Pages site, default to the crisp 4x (SVG) render when no scale is given.
+     Kept hostname-scoped so localhost stays at native scale=1 for the byte-exact melonDS verify. -->
+<script>
+  if (location.hostname.endsWith('github.io') && !/[?&](scale=|[1-4]x)/i.test(location.search)) {
+    location.replace(location.pathname + '?scale=4' + location.hash);
+  }
+</script>
+<style>
+  /* Lookalike fonts used ONLY for smooth text at high render scale (?scale=2/3/4); native
+     scale=1 keeps the pixel-exact bitmap glyphs. Letters use Mirsany (1001fonts Free For
+     Personal Use); digits use M PLUS Rounded 1c (OFL), a closer match for the DS numerals. */
+  @font-face { font-family: 'DSVec'; src: url('public/font/dsvec.ttf') format('truetype'); font-display: block; }
+  @font-face { font-family: 'DSVecNum'; src: url('public/font/dsvecnum.ttf') format('truetype'); font-display: block; }
+  :root { --scale: 2; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    height: 100%; background: #101012; overflow: hidden;
+    font-family: sans-serif; -webkit-user-select: none; user-select: none;
+    touch-action: none;
+  }
+  #device {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    display: flex; flex-direction: column; align-items: center;
+    gap: calc(20px * var(--scale) / 2);
+  }
+  .screen-wrap {
+    width: calc(256px * var(--scale));
+    height: calc(192px * var(--scale));
+    background: #000;
+    box-shadow: 0 0 0 calc(6px * var(--scale)) #1a1a1d, 0 0 0 calc(7px * var(--scale)) #000;
+    border-radius: 3px;
+  }
+  canvas.screen {
+    width: 100%; height: 100%; display: block;
+    image-rendering: pixelated; image-rendering: crisp-edges;
+  }
+  #bottom-wrap { position: relative; }
+  #hud { position: fixed; left: 8px; bottom: 6px; color: #555; font-size: 11px; font-family: monospace; }
+  #boot-cover { /* device power LED etc could go here */ }
+</style>
+</head>
+<body>
+  <div id="device">
+    <div class="screen-wrap" id="top-wrap"><canvas class="screen" id="top" width="256" height="192"></canvas></div>
+    <div class="screen-wrap" id="bottom-wrap"><canvas class="screen" id="bottom" width="256" height="192"></canvas></div>
+  </div>
+  <div id="hud"></div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

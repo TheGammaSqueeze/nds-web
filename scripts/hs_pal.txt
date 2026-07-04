@@ -1,0 +1,4 @@
+frame 150
+pal A 0x0 512 hs_A_bgpal.bin
+frame 200
+pal A 0x0 512 hs_A_bgpal_f200.bin

@@ -1,0 +1,708 @@
+{
+  "totalSlots": 39,
+  "defaultSlot": 17,
+  "slots": [
+    {
+      "slot": 0,
+      "type": "app",
+      "id": "00030015_484e4245",
+      "gamecode": "HNBE",
+      "name": "System Settings",
+      "publisher": "",
+      "lines": [
+        "System Settings"
+      ],
+      "icon": "icons/00030015_484e4245.png",
+      "anim": null,
+      "animFrames": 0,
+      "frameDurations": [],
+      "launchable": true
+    },
+    {
+      "slot": 1,
+      "type": "gamecard",
+      "name": "There is nothing inserted in the Game Card slot.",
+      "launchable": false
+    },
+    {
+      "slot": 2,
+      "type": "app",
+      "id": "00030005_484e4945",
+      "gamecode": "HNIE",
+      "name": "Nintendo DSi Camera",
+      "publisher": "Nintendo",
+      "lines": [
+        "Nintendo DSi Camera",
+        "Nintendo"
+      ],
+      "icon": "icons/00030005_484e4945.png",
+      "anim": "icons/00030005_484e4945_anim.png",
+      "animFrames": 8,
+      "frameDurations": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 3,
+      "type": "app",
+      "id": "00030005_484e4b45",
+      "gamecode": "HNKE",
+      "name": "Nintendo DSi Sound",
+      "publisher": "Nintendo",
+      "lines": [
+        "Nintendo DSi Sound",
+        "Nintendo"
+      ],
+      "icon": "icons/00030005_484e4b45.png",
+      "anim": "icons/00030005_484e4b45_anim.png",
+      "animFrames": 38,
+      "frameDurations": [
+        42,
+        4,
+        20,
+        60,
+        30,
+        20,
+        30,
+        20,
+        4,
+        4,
+        42,
+        4,
+        20,
+        60,
+        70,
+        20,
+        4,
+        4,
+        42,
+        4,
+        20,
+        60,
+        30,
+        20,
+        30,
+        30,
+        30,
+        36,
+        4,
+        4,
+        42,
+        4,
+        30,
+        50,
+        60,
+        60,
+        4,
+        4
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 4,
+      "type": "app",
+      "id": "00030004_4b344445",
+      "gamecode": "K4DE",
+      "name": "SUDOKU",
+      "publisher": "Electronic Arts Inc.",
+      "lines": [
+        "SUDOKU",
+        "Electronic Arts Inc."
+      ],
+      "icon": "icons/00030004_4b344445.png",
+      "anim": "icons/00030004_4b344445_anim.png",
+      "animFrames": 2,
+      "frameDurations": [
+        1,
+        0
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 5,
+      "type": "app",
+      "id": "00030004_4b533345",
+      "gamecode": "KS3E",
+      "name": "Shantae: Risky's Revenge™",
+      "publisher": "By WayForward",
+      "lines": [
+        "Shantae: Risky's Revenge™",
+        "By WayForward"
+      ],
+      "icon": "icons/00030004_4b533345.png",
+      "anim": "icons/00030004_4b533345_anim.png",
+      "animFrames": 8,
+      "frameDurations": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 6,
+      "type": "app",
+      "id": "00030004_4b4d4745",
+      "gamecode": "KMGE",
+      "name": "Mighty Flip Champs!™",
+      "publisher": "By WayForward",
+      "lines": [
+        "Mighty Flip Champs!™",
+        "By WayForward"
+      ],
+      "icon": "icons/00030004_4b4d4745.png",
+      "anim": "icons/00030004_4b4d4745_anim.png",
+      "animFrames": 8,
+      "frameDurations": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 7,
+      "type": "app",
+      "id": "00030004_4b435645",
+      "gamecode": "KCVE",
+      "name": "Cave Story",
+      "publisher": "Nicalis",
+      "lines": [
+        "Cave Story",
+        "Nicalis"
+      ],
+      "icon": "icons/00030004_4b435645.png",
+      "anim": "icons/00030004_4b435645_anim.png",
+      "animFrames": 8,
+      "frameDurations": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 8,
+      "type": "app",
+      "id": "00030004_4b513945",
+      "gamecode": "KQ9E",
+      "name": "Zelda: Four Swords Anniversary Edition",
+      "publisher": "Nintendo",
+      "lines": [
+        "Zelda: Four Swords",
+        "Anniversary Edition",
+        "Nintendo"
+      ],
+      "icon": "icons/00030004_4b513945.png",
+      "anim": "icons/00030004_4b513945_anim.png",
+      "animFrames": 11,
+      "frameDurations": [
+        15,
+        30,
+        5,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        15
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 9,
+      "type": "app",
+      "id": "00030004_4b445645",
+      "gamecode": "KDVE",
+      "name": "Dark Void™ Zero",
+      "publisher": "CAPCOM ENTERTAINMENT, INC.",
+      "lines": [
+        "Dark Void™ Zero",
+        "CAPCOM ENTERTAINMENT, INC."
+      ],
+      "icon": "icons/00030004_4b445645.png",
+      "anim": "icons/00030004_4b445645_anim.png",
+      "animFrames": 8,
+      "frameDurations": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 10,
+      "type": "app",
+      "id": "00030004_4b504145",
+      "gamecode": "KPAE",
+      "name": "A Kappa's Trail",
+      "publisher": "Nintendo",
+      "lines": [
+        "A Kappa's Trail",
+        "Nintendo"
+      ],
+      "icon": "icons/00030004_4b504145.png",
+      "anim": "icons/00030004_4b504145_anim.png",
+      "animFrames": 6,
+      "frameDurations": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 11,
+      "type": "app",
+      "id": "00030004_4b444d45",
+      "gamecode": "KDME",
+      "name": "Mario vs. Donkey Kong Minis March Again!",
+      "publisher": "Nintendo",
+      "lines": [
+        "Mario vs. Donkey Kong",
+        "Minis March Again!",
+        "Nintendo"
+      ],
+      "icon": "icons/00030004_4b444d45.png",
+      "anim": "icons/00030004_4b444d45_anim.png",
+      "animFrames": 8,
+      "frameDurations": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 12,
+      "type": "app",
+      "id": "00030004_4b4e4145",
+      "gamecode": "KNAE",
+      "name": "Petit Computer",
+      "publisher": "Gamebridge",
+      "lines": [
+        "Petit Computer",
+        "Gamebridge"
+      ],
+      "icon": "icons/00030004_4b4e4145.png",
+      "anim": "icons/00030004_4b4e4145_anim.png",
+      "animFrames": 8,
+      "frameDurations": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        64
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 13,
+      "type": "app",
+      "id": "00030004_4b414145",
+      "gamecode": "KAAE",
+      "name": "AQUIA Art Style Series",
+      "publisher": "Nintendo",
+      "lines": [
+        "AQUIA",
+        "Art Style Series",
+        "Nintendo"
+      ],
+      "icon": "icons/00030004_4b414145.png",
+      "anim": "icons/00030004_4b414145_anim.png",
+      "animFrames": 14,
+      "frameDurations": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 14,
+      "type": "app",
+      "id": "00030004_4b414845",
+      "gamecode": "KAHE",
+      "name": "BOXLIFE Art Style Series",
+      "publisher": "Nintendo",
+      "lines": [
+        "BOXLIFE",
+        "Art Style Series",
+        "Nintendo"
+      ],
+      "icon": "icons/00030004_4b414845.png",
+      "anim": "icons/00030004_4b414845_anim.png",
+      "animFrames": 8,
+      "frameDurations": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        120
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 15,
+      "type": "app",
+      "id": "00030004_4b415045",
+      "gamecode": "KAPE",
+      "name": "PiCTOBiTS Art Style Series",
+      "publisher": "Nintendo",
+      "lines": [
+        "PiCTOBiTS",
+        "Art Style Series",
+        "Nintendo"
+      ],
+      "icon": "icons/00030004_4b415045.png",
+      "anim": "icons/00030004_4b415045_anim.png",
+      "animFrames": 8,
+      "frameDurations": [
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 16,
+      "type": "app",
+      "id": "00030004_4b535245",
+      "gamecode": "KSRE",
+      "name": "Aura-Aura Climber",
+      "publisher": "Nintendo",
+      "lines": [
+        "Aura-Aura Climber",
+        "Nintendo"
+      ],
+      "icon": "icons/00030004_4b535245.png",
+      "anim": "icons/00030004_4b535245_anim.png",
+      "animFrames": 8,
+      "frameDurations": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 17,
+      "type": "app",
+      "id": "00030004_4b503645",
+      "gamecode": "KP6E",
+      "name": "Bird & Beans",
+      "publisher": "Nintendo",
+      "lines": [
+        "Bird & Beans",
+        "Nintendo"
+      ],
+      "icon": "icons/00030004_4b503645.png",
+      "anim": "icons/00030004_4b503645_anim.png",
+      "animFrames": 19,
+      "frameDurations": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        60,
+        2,
+        2,
+        2,
+        30,
+        2,
+        2
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 18,
+      "type": "app",
+      "id": "00030004_4b414d45",
+      "gamecode": "KAME",
+      "name": "Paper Airplane Chase",
+      "publisher": "Nintendo",
+      "lines": [
+        "Paper Airplane Chase",
+        "Nintendo"
+      ],
+      "icon": "icons/00030004_4b414d45.png",
+      "anim": "icons/00030004_4b414d45_anim.png",
+      "animFrames": 8,
+      "frameDurations": [
+        4,
+        6,
+        7,
+        9,
+        8,
+        10,
+        7,
+        40
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 19,
+      "type": "app",
+      "id": "00030015_484e4645",
+      "gamecode": "HNFE",
+      "name": "Nintendo DSi Shop",
+      "publisher": "Nintendo",
+      "lines": [
+        "Nintendo DSi Shop",
+        "Nintendo"
+      ],
+      "icon": "icons/00030015_484e4645.png",
+      "anim": "icons/00030015_484e4645_anim.png",
+      "animFrames": 23,
+      "frameDurations": [
+        16,
+        3,
+        6,
+        6,
+        16,
+        3,
+        6,
+        6,
+        16,
+        3,
+        6,
+        6,
+        30,
+        4,
+        30,
+        4,
+        4,
+        120,
+        4,
+        4,
+        18,
+        4,
+        30
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 20,
+      "type": "app",
+      "id": "00030005_484e4441",
+      "gamecode": "HNDA",
+      "name": "DS Download Play",
+      "publisher": "Nintendo",
+      "lines": [
+        "DS Download Play",
+        "Nintendo"
+      ],
+      "icon": "icons/00030005_484e4441.png",
+      "anim": "icons/00030005_484e4441_anim.png",
+      "animFrames": 8,
+      "frameDurations": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 21,
+      "type": "app",
+      "id": "00030005_484e4541",
+      "gamecode": "HNEA",
+      "name": "PictoChat",
+      "publisher": "Nintendo",
+      "lines": [
+        "PictoChat",
+        "Nintendo"
+      ],
+      "icon": "icons/00030005_484e4541.png",
+      "anim": "icons/00030005_484e4541_anim.png",
+      "animFrames": 38,
+      "frameDurations": [
+        6,
+        8,
+        6,
+        8,
+        6,
+        8,
+        20,
+        50,
+        8,
+        8,
+        30,
+        6,
+        8,
+        6,
+        8,
+        20,
+        50,
+        8,
+        8,
+        30,
+        8,
+        6,
+        8,
+        6,
+        8,
+        20,
+        50,
+        8,
+        8,
+        30,
+        30,
+        6,
+        6,
+        6,
+        70,
+        8,
+        8,
+        30
+      ],
+      "launchable": true
+    },
+    {
+      "slot": 22,
+      "type": "empty"
+    },
+    {
+      "slot": 23,
+      "type": "empty"
+    },
+    {
+      "slot": 24,
+      "type": "empty"
+    },
+    {
+      "slot": 25,
+      "type": "empty"
+    },
+    {
+      "slot": 26,
+      "type": "empty"
+    },
+    {
+      "slot": 27,
+      "type": "empty"
+    },
+    {
+      "slot": 28,
+      "type": "empty"
+    },
+    {
+      "slot": 29,
+      "type": "empty"
+    },
+    {
+      "slot": 30,
+      "type": "empty"
+    },
+    {
+      "slot": 31,
+      "type": "empty"
+    },
+    {
+      "slot": 32,
+      "type": "empty"
+    },
+    {
+      "slot": 33,
+      "type": "empty"
+    },
+    {
+      "slot": 34,
+      "type": "empty"
+    },
+    {
+      "slot": 35,
+      "type": "empty"
+    },
+    {
+      "slot": 36,
+      "type": "empty"
+    },
+    {
+      "slot": 37,
+      "type": "empty"
+    },
+    {
+      "slot": 38,
+      "type": "empty"
+    }
+  ]
+}

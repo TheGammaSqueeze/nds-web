@@ -1,0 +1,19 @@
+{
+  "selFrame": "launcher_d/cell_02.png",
+  "selFramePlain": "launcher_d/cell_00.png",
+  "selFramePressed": "launcher_d/cell_01.png",
+  "appTile": "launcher_d/cell_07_base.png",
+  "gamecard": "launcher_d/cell_10_base.png",
+  "tile": "launcher_d/tile_white.png",
+  "tileEmpty": "launcher_d/tile_empty.png",
+  "tileNotch": "launcher_d/tile_notch.png",
+  "volIcon": "launcher_u/cell_10_base.png",
+  "tabDown": "launcher_d/cell_24.png",
+  "arrowL": "launcher_d/cell_18.png",
+  "arrowLp": "launcher_d/cell_19.png",
+  "arrowR": "launcher_d/cell_20.png",
+  "arrowRp": "launcher_d/cell_21.png",
+  "thumb": "launcher_d/cell_31.png",
+  "camScrimL": "camera_scrim_l.png",
+  "camScrimR": "camera_scrim_r.png"
+}

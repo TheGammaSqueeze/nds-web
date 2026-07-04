@@ -1,0 +1,14 @@
+# Boot, pass health & safety, reach DSi menu
+frame 600
+capture 01_healthsafety
+tap 128 96
+frame 660
+capture 02_after_tap
+frame 750
+capture 03_menu_a
+frame 900
+capture 04_menu_b
+frame 1100
+capture 05_menu_c
+frame 1400
+capture 06_menu_d

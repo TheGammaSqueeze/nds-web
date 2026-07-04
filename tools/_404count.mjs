@@ -1,0 +1,16 @@
+import { chromium } from 'playwright';
+import { startServer } from '/work/nds/tools/serve.js';
+const s = await startServer();
+const b = await chromium.launch({ args: ['--use-gl=swiftshader', '--no-sandbox'] });
+const p = await b.newPage();
+const f404 = [];
+p.on('response', r => { if (r.status() === 404) f404.push(r.url().split('/').slice(-2).join('/')); });
+const t0 = Date.now();
+await p.goto(s.url + '?scale=4', { waitUntil: 'networkidle' });
+await p.waitForFunction('window.DSi && window.DSi.ready').catch(()=>{});
+console.log('load time to ready:', ((Date.now()-t0)/1000).toFixed(1)+'s');
+console.log('total 404s:', f404.length);
+const byExt = {}; f404.forEach(u => { const e = u.split('.').pop(); byExt[e] = (byExt[e]||0)+1; });
+console.log('by ext:', JSON.stringify(byExt));
+console.log('sample:', [...new Set(f404)].slice(0,12));
+await b.close(); s.close();

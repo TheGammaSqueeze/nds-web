@@ -1,0 +1,25 @@
+frame 640
+tap 128 96
+frame 1320
+mark idle_silent
+mark sfx_navR
+key RIGHT
+wait 2
+unkey RIGHT
+wait 70
+mark sfx_navR2
+key RIGHT
+wait 2
+unkey RIGHT
+wait 70
+mark sfx_navL
+key LEFT
+wait 2
+unkey LEFT
+wait 70
+mark sfx_launch
+key A
+wait 2
+unkey A
+wait 100
+mark sfx_end

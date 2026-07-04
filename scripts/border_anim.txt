@@ -1,0 +1,62 @@
+# Boot to carousel. Record one LEFT step in full (slide + border settle), then
+# press RIGHT many times to run off the end of the app list onto empty slots and
+# record the border disappearing.
+frame 640
+tap 128 96
+frame 780
+rec on navL
+key LEFT
+wait 3
+unkey LEFT
+wait 30
+rec off
+# hammer RIGHT ~30 slots to reach the trailing empty region
+frame 820
+key RIGHT
+wait 3
+unkey RIGHT
+wait 6
+key RIGHT
+wait 3
+unkey RIGHT
+wait 6
+key RIGHT
+wait 3
+unkey RIGHT
+wait 6
+key RIGHT
+wait 3
+unkey RIGHT
+wait 6
+key RIGHT
+wait 3
+unkey RIGHT
+wait 6
+key RIGHT
+wait 3
+unkey RIGHT
+wait 6
+key RIGHT
+wait 3
+unkey RIGHT
+wait 6
+key RIGHT
+wait 3
+unkey RIGHT
+wait 6
+key RIGHT
+wait 3
+unkey RIGHT
+wait 6
+key RIGHT
+wait 3
+unkey RIGHT
+wait 6
+rec on atend
+capture end0
+key RIGHT
+wait 3
+unkey RIGHT
+wait 20
+rec off
+capture end1

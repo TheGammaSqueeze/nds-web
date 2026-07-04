@@ -1,0 +1,6 @@
+frame 150
+vrambg A 0x0 16384 hs_A_char.bin
+vrambg A 0x6000 2048 hs_A_map.bin
+frame 200
+vrambg A 0x0 16384 hs_A_char_f200.bin
+vrambg A 0x6000 2048 hs_A_map_f200.bin

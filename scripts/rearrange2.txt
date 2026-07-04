@@ -1,0 +1,27 @@
+# Boot to carousel, then touch-and-HOLD the centre icon to grab it, hold to see
+# it lift, drag it right, and release to drop. This is the real rearrange gesture.
+frame 640
+tap 128 96
+frame 760
+# HOLD the centre selected icon
+rec on hold
+touch 128 110
+wait 90
+rec off
+capture held
+# DRAG the grabbed icon to the right (move touch point across a slot ~58px)
+rec on dragR
+touch 150 110
+wait 4
+touch 172 110
+wait 4
+touch 194 110
+wait 20
+rec off
+capture dragged
+# RELEASE to drop
+rec on release
+release
+wait 30
+rec off
+capture released

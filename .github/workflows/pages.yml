@@ -1,0 +1,36 @@
+# Deploy the static webapp/ folder to GitHub Pages (no build step - it is a plain
+# ES-module browser app). Serves at https://thegammasqueeze.github.io/nds-web/
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ship SVGs, drop the redundant Nintendo bitmaps from the published artifact
+        # The site defaults to 4x, where every asset that has an .svg is drawn from the vector
+        # (svg_manifest.json) so its .png is never requested. Remove those PNGs from the artifact
+        # (source keeps them for the scale=1 byte-exact melonDS verify). Audio is kept as-is.
+        run: |
+          cd webapp/public
+          find . -name '*.svg' | while read -r svg; do png="${svg%.svg}.png"; [ -f "$png" ] && rm -f "$png"; done
+          echo "artifact now has $(find . -name '*.png' | wc -l) pngs and $(find . -name '*.svg' | wc -l) svgs"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: webapp
+      - id: deployment
+        uses: actions/deploy-pages@v4

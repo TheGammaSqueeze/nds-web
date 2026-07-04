@@ -1,0 +1,11 @@
+mark boot_start
+rec on boot/f
+frame 760
+rec off
+mark hs_shown
+tap 128 96
+mark tap
+rec on boot/m
+frame 980
+rec off
+mark menu_idle

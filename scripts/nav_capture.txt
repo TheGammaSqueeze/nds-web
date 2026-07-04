@@ -1,0 +1,28 @@
+frame 640
+tap 128 96
+frame 820
+mark idle
+rec on anim/navR/g
+mark navR
+key RIGHT
+wait 2
+unkey RIGHT
+wait 30
+rec off
+rec on anim/navL/g
+mark navL
+key LEFT
+wait 2
+unkey LEFT
+wait 30
+rec off
+mark before_launch
+rec on anim/launch/g
+key A
+wait 2
+unkey A
+wait 120
+rec off
+mark after_launch
+frame 1400
+mark settled

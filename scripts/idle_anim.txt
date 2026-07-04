@@ -1,0 +1,9 @@
+# Boot to the carousel, sit at idle on the selected app, record ~100 frames to
+# capture the real selection-frame / START-border animation cycle.
+frame 640
+tap 128 96
+frame 760
+rec on idle
+wait 100
+rec off
+capture idle_done

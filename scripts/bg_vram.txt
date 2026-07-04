@@ -1,0 +1,6 @@
+frame 760
+tap 128 96
+frame 1740
+vrambg A 14000 32768 bg0_tiles.bin
+vrambg A b000 2048 bg0_map.bin
+capture carousel_idle

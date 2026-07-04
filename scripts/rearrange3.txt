@@ -1,0 +1,13 @@
+# Fully settle the carousel first, then touch-and-hold steadily to try to trigger
+# the icon grab ("pop"). Try the centre icon, held a long time, no movement.
+frame 640
+tap 128 96
+frame 820
+mark settled
+rec on hold2
+touch 128 112
+wait 150
+rec off
+capture held2
+release
+wait 20

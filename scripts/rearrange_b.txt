@@ -1,0 +1,19 @@
+# Settle, grab with UP, move RIGHT one slot, then press B. Capture to see if B
+# cancels (icon returns to origin) or drops it at the moved position.
+frame 640
+tap 128 96
+frame 830
+key UP
+wait 4
+unkey UP
+wait 30
+key RIGHT
+wait 3
+unkey RIGHT
+wait 20
+capture b_grabbed_moved
+key B
+wait 4
+unkey B
+wait 30
+capture b_after
