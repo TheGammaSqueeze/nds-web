@@ -128,7 +128,11 @@ function renderSeq({ code, base, entry, sbnk, swarSamples, seqVol = 127, maxSec 
   const tracks = [mkTrack(base + entry)];
   let tempo = 120;
   const voices = [], gates = [];                       // gates: [{offTick, voice}]
-  const vars = new Int16Array(32);
+  // NITRO sound variables reset to -1 (0xFFFF) on the real driver, not 0. This matters for the
+  // launcher SOFT_SCROLL, which sets its note attack from variable 16 (a1 d0 10): unread, the
+  // variable is -1, and an ADSR override of -1 is the driver's "leave at the instrument default"
+  // sentinel, so the note keeps the bank's fast attack instead of being pinned to attack 0 (mute).
+  const vars = new Int16Array(32).fill(-1);
   let rngState = seed >>> 0;
   const rnd = () => { rngState = (rngState * 1664525 + 1013904223) >>> 0; return rngState / 4294967296; };
   const extraDb = dbSq(seqVol);
@@ -199,7 +203,13 @@ function renderSeq({ code, base, entry, sbnk, swarSamples, seqVol = 127, maxSec 
               const oldest = sounding.reduce((a, b) => a.tStart <= b.tStart ? a : b);
               oldest.stopAt = timeSec; oldest.stopSec = Math.max(0, timeSec - oldest.tStart);
             }
-            voices.push(v); gates.push({ offTick: tick + len, v });
+            // NITRO note gate: len ticks until note-off. A gate of 0 means "no key-off" -
+            // the note is held and rings out under its own ADSR (attack -> decay -> sustain ->
+            // natural death), which is how the launcher one-shot SE (SOFT_SCROLL, START_FRAME,
+            // SOFT_SET, ...) are authored. Forcing an immediate off there releases from silence
+            // before the attack ramps, rendering them mute. Only schedule a gate for len>0.
+            voices.push(v);
+            if (len > 0) gates.push({ offTick: tick + len, v }); else v.held = true;
           }
         }
         else if (realOp === 0x80) { tr.wait = argVar(); }
@@ -230,10 +240,12 @@ function renderSeq({ code, base, entry, sbnk, swarSamples, seqVol = 127, maxSec 
         else if (realOp === 0xcb) tr.modSpeed = arg1();
         else if (realOp === 0xcc) tr.modType = arg1();
         else if (realOp === 0xcd) tr.pc0 = arg1();
-        else if (realOp === 0xd0) tr.attack = arg1();
-        else if (realOp === 0xd1) tr.decay = arg1();
-        else if (realOp === 0xd2) tr.sustain = arg1();
-        else if (realOp === 0xd3) tr.release = arg1();
+        // ADSR overrides: a value of -1 (0xFF / from a reset variable) is the driver's
+        // "keep the instrument default" sentinel, so map it back to null (no override).
+        else if (realOp === 0xd0) { const a = arg1(); tr.attack = a < 0 ? null : a; }
+        else if (realOp === 0xd1) { const d = arg1(); tr.decay = d < 0 ? null : d; }
+        else if (realOp === 0xd2) { const s = arg1(); tr.sustain = s < 0 ? null : s; }
+        else if (realOp === 0xd3) { const r = arg1(); tr.release = r < 0 ? null : r; }
         else if (realOp === 0xd4) { tr.loopStack.push({ pc: tr.pc + (argOverride !== null ? 0 : 1), count: argOverride !== null ? argOverride : code[tr.pc], done: 0 }); if (argOverride === null) tr.pc++; }
         else if (realOp === 0xfc) { const l = tr.loopStack[tr.loopStack.length - 1]; if (l) { l.done++; if (l.count === 0 ? l.done < 3 : l.done < l.count) tr.pc = l.pc; else tr.loopStack.pop(); } }
         else if (realOp === 0xd5) { tr.expr = arg1(); tr.exprAuto.push([timeSec, tr.expr]); }
@@ -269,7 +281,10 @@ function renderSeq({ code, base, entry, sbnk, swarSamples, seqVol = 127, maxSec 
     timeSec += tickSec();
     if (timeSec > maxSec) break;
   }
+  // held (gate 0) voices carry no key-off: leave lenSec null so they ring out under their own
+  // ADSR + sample end. Any other still-open gate (sequence ended mid-note) closes at the tail.
   for (const g of gates) if (g.v.lenSec === null) g.v.lenSec = Math.max(0.01, timeSec - g.v.tStart);
+  for (const v of voices) if (v.held) v.lenSec = null;
   // total length: to loopEnd exactly if looping (seamless), else last gate + tail
   let total;
   if (loopEnd !== null) total = loopEnd;

@@ -204,7 +204,8 @@ export class Launcher {
     this.scrubbing = false; this.fling = null;
     const n = this.reg.totalSlots;
     const next = Math.max(0, Math.min(n - 1, this.selected + dir));
-    if (next === this.selected) return;
+    // pushing past the first/last slot: the carousel does not wrap, it plays the reject blip
+    if (next === this.selected) { this.audio && this.audio.play('navInvalid', { gain: 0.9 }); return; }
     this.slideFrom = this.selected;
     this.selected = next;
     this.targetCamera = next;
@@ -254,7 +255,7 @@ export class Launcher {
     const others = packed.filter((a) => a !== app);
     this.grab = { app, from, others, insertPos: from, liftT: 0, rowCam: from,
       rowCam0: from, anchorX: 0, dragging: false, pendingDrop: false };
-    this.audio && this.audio.play('nav', { gain: 0.9 });
+    this.audio && this.audio.play('grab', { gain: 0.9 });   // TWL_LAN_SE_SOFT_GRAB
     return true;
   }
 
@@ -298,7 +299,7 @@ export class Launcher {
   dropGrabbed() {
     if (!this.grab || this.grab.drop) return;
     this.grab.drop = { t: 0 };
-    this.audio && this.audio.play('launch', { gain: 0.6 });
+    this.audio && this.audio.play('set', { gain: 0.9 });   // TWL_LAN_SE_SOFT_SET (drop into slot)
   }
 
   grabbing() { return !!this.grab; }
