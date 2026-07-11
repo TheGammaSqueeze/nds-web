@@ -204,8 +204,7 @@ export class Launcher {
     this.scrubbing = false; this.fling = null;
     const n = this.reg.totalSlots;
     const next = Math.max(0, Math.min(n - 1, this.selected + dir));
-    // pushing past the first/last slot: the carousel does not wrap, it plays the reject blip
-    if (next === this.selected) { this.audio && this.audio.play('navInvalid', { gain: 0.9 }); return; }
+    if (next === this.selected) return;
     this.slideFrom = this.selected;
     this.selected = next;
     this.targetCamera = next;

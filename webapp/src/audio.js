@@ -44,9 +44,7 @@ export class AudioManager {
       settingsNav: 'public/audio/settings_nav.wav',
       settingsEnter: 'public/audio/settings_enter.wav',
       settingsBack: 'public/audio/settings_back.wav',
-      navInvalid: 'public/audio/nav_invalid.wav',   // scroll past the end of the carousel
       grab: 'public/audio/grab.wav',                // lift an icon in rearrange mode
-      release: 'public/audio/release.wav',          // cancel a grab
       set: 'public/audio/set.wav',                  // drop an icon into a slot
     };
     await Promise.all(Object.entries(eager).map(([k, u]) => Assets.loadAudio(k, u, this.ctx)));

@@ -1,0 +1,81 @@
+diff --git a/src/SPU.cpp b/src/SPU.cpp
+index e1d49f96..cb9ba978 100644
+--- a/src/SPU.cpp
++++ b/src/SPU.cpp
+@@ -867,20 +867,33 @@ void SPU::Mix(u32 spucycles)
+         s32 ch1 = Channels[1].DoRun(spucycles);
+         s32 ch2 = Channels[2].DoRun(spucycles);
+         s32 ch3 = Channels[3].DoRun(spucycles);
++        ChanEnergy[0] += ch0 < 0 ? -ch0 : ch0;
++        ChanEnergy[1] += ch1 < 0 ? -ch1 : ch1;
++        ChanEnergy[2] += ch2 < 0 ? -ch2 : ch2;
++        ChanEnergy[3] += ch3 < 0 ? -ch3 : ch3;
+ 
+         // TODO: addition from capture registers
+-        Channels[0].PanOutput(ch0, left, right);
+-        Channels[2].PanOutput(ch2, left, right);
+-
+-        if (!(Cnt & (1<<12))) Channels[1].PanOutput(ch1, left, right);
+-        if (!(Cnt & (1<<13))) Channels[3].PanOutput(ch3, left, right);
++        // ChanMuteMask / MuteSrcRange (headless SE isolation): channels are still DoRun above/
++        // below so state and timing are unchanged, but a muted channel is left out of the panned
++        // mix. isMuted() also drops any voice whose sample source is in the muted region (BGM).
++        auto isMuted = [&](int i) -> bool {
++            if (ChanMuteMask & (1<<i)) return true;
++            if (MuteSrcLo != MuteSrcHi) { u32 a = Channels[i].SrcAddr; if (a >= MuteSrcLo && a < MuteSrcHi) return true; }
++            return false;
++        };
++        if (!isMuted(0)) Channels[0].PanOutput(ch0, left, right);
++        if (!isMuted(2)) Channels[2].PanOutput(ch2, left, right);
++
++        if (!(Cnt & (1<<12)) && !isMuted(1)) Channels[1].PanOutput(ch1, left, right);
++        if (!(Cnt & (1<<13)) && !isMuted(3)) Channels[3].PanOutput(ch3, left, right);
+ 
+         for (int i = 4; i < 16; i++)
+         {
+             SPUChannel* chan = &Channels[i];
+ 
+             s32 channel = chan->DoRun(spucycles);
+-            chan->PanOutput(channel, left, right);
++            ChanEnergy[i] += channel < 0 ? -channel : channel;
++            if (!isMuted(i)) chan->PanOutput(channel, left, right);
+         }
+ 
+         // sound capture
+diff --git a/src/SPU.h b/src/SPU.h
+index 34af364e..6fdad734 100644
+--- a/src/SPU.h
++++ b/src/SPU.h
+@@ -247,6 +247,22 @@ public:
+     void Mix(u32 spucycles);
+     void BufferAudio();
+ 
++    // headless SE isolation: bit i set = channel i is dropped from the mix (but still run,
++    // so emulation stays deterministic). Used to mute the launcher BGM voices while capturing
++    // a sound effect on its own from the real firmware driver.
++    void SetChannelMuteMask(u16 mask) { ChanMuteMask = mask; }
++    u16 GetChannelMuteMask() const { return ChanMuteMask; }
++    // Mute any voice whose current sample source address is in [lo, hi). The launcher loads
++    // WAVE_SE and WAVE_BGM into disjoint regions, so setting this to the BGM region silences
++    // the music while sound effects (a different region) still play - and a BGM voice stolen by
++    // an effect auto-unmutes the moment its source switches to the effect sample. lo==hi = off.
++    void SetMuteSrcRange(u32 lo, u32 hi) { MuteSrcLo = lo; MuteSrcHi = hi; }
++    struct ChanInfo { bool on; u8 vol; u8 pan; u32 src; u8 type; };
++    ChanInfo GetChannelInfo(int i) const { const SPUChannel& c = Channels[i]; return { (c.Cnt & (1u<<31)) != 0, c.Volume, c.Pan, c.SrcAddr, (u8)((c.Cnt >> 29) & 3) }; }
++    // real per-channel output energy since the last read (sum of |pre-pan sample|). Reflects the
++    // live envelope, unlike the enable bit / volume register, so it shows which voices truly sound.
++    u64 ReadChannelEnergy(int i) { u64 e = ChanEnergy[i]; ChanEnergy[i] = 0; return e; }
++
+     void TrimOutput();
+     void DrainOutput();
+     void InitOutput();
+@@ -288,6 +304,9 @@ private:
+     bool ApplyBias = true;
+     bool Degrade10Bit = false;
+     bool Mute;
++    u16 ChanMuteMask = 0;
++    u32 MuteSrcLo = 0, MuteSrcHi = 0;
++    u64 ChanEnergy[16] = {};
+ 
+     std::array<SPUChannel, 16> Channels;
+     std::array<SPUCaptureUnit, 2> Capture;
